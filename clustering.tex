@@ -22,20 +22,20 @@ investigating these claims, some shortcomings with this approach are revealed.
 Of primary concern are the large area overheads required that were required to
 achieve the same benchmark performance. In order to achieve the same
 performance as the single core system, 6 cores and 3 times the baseline amount
-of cache were required. It is important to remember that these results are being
-presented in comparison to a single core reference on a highly parallel
+of cache were required. It is important to remember that these results are
+being presented in comparison to a single core reference on a highly parallel
 workload. By Amdahl's law, the use of parallelism in this case will be most
 effective. It would require a larger number of cores to achieve the same level
 of parallelism when comparing with a baseline system that included more than a
 single core. In fact, to achieve the same performance as the baseline, some
-benchmarks require as many as 16 cores and 32 times as much L1 cache (2MB vs
-64kB).
+benchmarks require as many as 16 cores and 32 times as much L1 cache
+(\SI{2}{\mega\byte} vs \SI{64}{\kilo\byte}).
 
 The clustering technique also uses separate $V_{th}$ tuning for the core and
 cache to find the energy optimal voltage for the same performance. However, in
 examining what these voltages actually are, it is revealed both voltages are not
 in the near-threshold regime, and are in fact operating at a $V_{dd}$ twice as
-high as the selected $V_{tt}$. In modern process technologies, the standard
+high as the selected $V_{th}$. In modern process technologies, the standard
 $V_{dd}$ is approaching 2x $V_{th}$.
 
 One final concern is that no co-optimized configuration is presented for all
