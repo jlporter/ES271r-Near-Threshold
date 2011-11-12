@@ -85,8 +85,12 @@ looks like an opportunity for near-threshold computing to take advantage of
 being able to power a larger number of cores simultaneously.
 
 Figure~\ref{fig:emb_performance} shows the maximum performance of an EMB-based
-CMP given different constraints. The ``Area (maximum frequency'' line
-represents the best performance with only a die area constraint, while the
-``Peak Performance'' line represents the best performance factoring in area,
-power, and memory bandwidth constraints.
+CMP given different constraints for a 99\% parallel workload. The ``Area
+(maximum frequency)'' line represents the best performance with only a die area
+constraint, while the ``Peak Performance'' line represents the best performance
+factoring in area, power, and memory bandwidth constraints. While the
+constrained case only has 12\% of the cores of the area constrained case, it
+only has approximately half the performance of the unconstrained case. Again,
+the performance is limited by the application parallelism, not the number of
+cores integrated onto the chip.
 
