@@ -1,0 +1,18 @@
+# adapted from http://gnuplot.sourceforge.net/demo/prob.40.gnu
+set terminal postscript eps color enhanced "Helvetica" 20
+set output 'plot.eps'
+normal(x,mu,sigma)=sigma<=0?1/0:invsqrt2pi/sigma*exp(-0.5*((x-mu)/sigma)**2)
+invsqrt2pi = 0.398942280401433
+mu = 0.0; sigma = 1.0
+xmin = mu +2.0 * sigma
+xmax = mu + 4.0 * sigma
+unset key
+unset xtics
+#unset ytics
+set xlabel "Nominal path delay"
+set ylabe "Count"
+set style line 2 linecolor rgb "blue"
+#set terminal postscript enhanced
+set arrow from 3,0.01 to 2.8,0.01
+set label "{/Symbol s} increases" at graph 0.4, graph 0.2
+plot [xmin:xmax] normal(x,mu,sigma) with filledcurves above x1=2.8 ls 2, normal(x,mu,sigma) with filledcurves above x1=3 ls 1
