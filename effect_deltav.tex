@@ -1,4 +1,7 @@
 \section{Determining the effect of $\Delta V_{th}$}
+** INSERT FIGURE 5 FROM DRESLINSKI **
+Because the delay of a gate has a strong dependence on gate voltage in near-threshold operation (see figure **INSERT FIGURE NUMBER**), determining the effect of small changes in $\Delta V_{th}$ is essential to understanding the operation of near-threshold circuits.
+This delay is determined by the drain current of the transistor.
 The drain current can be described by relatively simple equations for sub threshold \cite{Enz:1995vs} 
 
 \begin{equation}
@@ -11,7 +14,8 @@ and super threshold operation
 I_D \propto (V_P-V_S)^2
 \end{equation}
 
-where $V_P=V_G-V_{TH}-\gamma$ with $\gamma$ being a body effect factor. For near-threshold operation, however, an interpolation has to be used to bridge these two expressions\cite{Enz:1995vs}, giving us the forward drain current as
+where $V_P=V_G-V_{TH}-\gamma$ with $\gamma$ being a body effect factor. 
+For near-threshold operation, however, an interpolation has to be used to bridge these two expressions\cite{Enz:1995vs}, giving us the forward drain current as
 
 \begin{equation}
 I_D \propto \left[\ln\left(1+e^\frac{V_G-V_{TH}-\gamma}{2}\right)\right]^2
