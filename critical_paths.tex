@@ -1,0 +1,7 @@
+\section{Increase in the number of critical paths}
+ The increased variance in delay caused by near-threshold operation is directly responsible for an increase in the number of critical paths. The easiest way to visualize this is to consider a distribution of nominal delays of paths within a chip. A critical path can be defined as any path that has a high probability of exceeding a given clock \cite{Wang:2004bw}. For our cases of trying to find the maximum frequency a given device can run, we can instead consider a critical path as a path that has a high probability of setting FMAX; that is, of being the longest path in the system. This means that it is any path that falls within $n\frac{\sigma_v}{\mu}$ of the maximum nominal delay for a given n where $\sigma_v$ is the standard deviation of the timing path variation distribution.
+ 
+ **Insert figure showing a normal distribution with the right little bit colored**
+ 
+ Although the shape of the nominal delay distribution will vary depending on the design of the chip, if it is assumed this shape is strictly convex, the number of critical paths $N_{cp}$ increases at least linearly with $\sigma_v$. Considering that $\frac{\sigma_v}{\mu}$ increases approximately 7x as the voltage drops into the near-threshold regime, there is at least a 7x increase in the number of critical paths. This will translate into a reduction in the maximum frequency of the design\cite{Bowman:2002cp}. 
+
