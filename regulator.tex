@@ -1,0 +1,46 @@
+\section{Voltage Regulators}
+
+As shown in [A], compared to operating a digital design at the nominal voltage,
+operating a design at a supply voltage level that is near the device threshold
+voltage provides more energy-efficient computations. However, to fairly evaluate
+the energy saving obtainable from the near-threshold computing approach, the
+overhead in generating a near-threshold supply needs to be evaluated. Both [B]
+and [C] raised the concern that the efficiency of the voltage regulator would be
+lower for delivering power to a near-threshold computing design. [B] presents
+evidence that typical voltage regulator efficiency is lower at light load and
+argues that if a near threshold design consumes less power the efficiency will
+be lower.  [C] considers the case where the chip supply voltage is generated
+with an on-chip switch-capacitor converter. They shows that the efficiency of
+the regulator is at 90\% for an output voltage of 1.2V and is at 70\% for an
+output voltage of 0.5V.   
+
+In the context of server computing, the power is delivered to the
+microprocessors is typically through a buck converter which down convert the 12V
+mother board voltage [].Although it is difficult to derive a quantitative
+comparison between the efficiency of a 1.2V output for an above threshold design
+and a 0.5 output for a near threshold design, it is possible to consider the
+difference in requirement for these two regulators and understand where the
+difference in efficiency may come in. It is intuitive to compare the above
+threshold converter and the near threshold converter at the same percentage of
+voltage ripple requirement. However, as shown in equation X3, the delay of a
+logic gate is more sensitive to the supply voltage in the near threshold region.
+Thus, if voltage ripple requirement is the same, the near threshold DC-DC
+converter will introduce more delay variation in the design. As performance
+variation has already been one of the key limiting factors for near threshold
+computing, it is desirable to maintain the same variation level due to voltage
+ripple. Thus, it is necessary to have a stringent voltage ripple requirement for
+a near-threshold voltage regulator. 
+
+In addition, the current consumption of the two regulators will also be
+different. One of the goals of employing near threshold computing for servers is
+to reduce power consumption while maintaining throughput. However, unless near
+threshold computing can achieve power reduction by a factor that is larger than
+the supply voltage ratio, the current drawn by a near threshold design is going
+to be higher. This higher output current is particular problematic for the power
+loss due to the output rectification. The efficiency loss in the output
+rectification is the ratio between the output voltage and the voltage drop
+across the output transistor. Since the output voltage is small, the regulator
+is more sensitive to voltage drop across the output transistor. On top of that,
+the higher output current further increases the voltage drop across the output
+stage.  
+
