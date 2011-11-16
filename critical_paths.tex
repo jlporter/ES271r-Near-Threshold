@@ -1,9 +1,11 @@
 \section{Increase in the number of critical paths}
+\label{sec:criticalpaths}
+
 The increased variance in delay caused by near-threshold operation is directly responsible for an increase in the number of critical paths.
 A critical path can be defined as any path that has a high probability of exceeding a given clock \cite{Wang:2004bw}.
 For our cases of trying to find the maximum frequency a given device can run, we can instead consider a critical path as a path that has a high probability of setting FMAX; that is, of being the longest path in the system.
   
-Consider a distribution of nominal delays of paths within a chip (figure~\ref{fig:normal}).
+Consider a distribution of nominal delays of paths within a chip (Figure~\ref{fig:normal}).
 In the case of no variations, clock speed is set by the path with the highest nominal delay.
 Once delay variation is added in, however, points that are close in delay to the path with the highest nominal delay could act instead as the critical path in a portion of chips.
 This means that it is any path that falls within $n\frac{\sigma_v}{\mu}$ of the maximum nominal delay for a given n where $\sigma_v$ is the standard deviation of the timing path variation distribution.

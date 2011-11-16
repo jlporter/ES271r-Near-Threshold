@@ -1,5 +1,6 @@
-
 \section{Device Optimizations}
+\label{sec:deviceoptimization}
+
 Dreslinski et al. \cite{Dreslinski:2010ez} suggest modifications of the transistor structure to reduce delay by reducing inverse sub-threshold slope ($S_S$). 
 This can take the form of either modifying the channel doping profile \cite{Paul:2004cx} or increasing oxide length \cite{Hanson:2007uu}.
 
@@ -14,10 +15,10 @@ t_p \propto \frac{1}{e^\frac{V_{D}-V_{TH}}{S_S}}
 which is a much weaker effect considering that $S_S$ in the range of 80-90mV. 
 
 The actual correlation of delay to $S_S$ is even weaker because Hanson is using an equation that assumes we are far sub-threshold. 
-As we pass$ V_{TH}$, the current and delay begin to instead scale with an interpolation between super-threshold and sub-threshold models rather than just the sub-threshold model. 
+As we pass $V_{TH}$, the current and delay begin to instead scale with an interpolation between super-threshold and sub-threshold models rather than just the sub-threshold model. 
 Because the super-threshold model doesn't have a reliance on $S_S$, this means that the effect of modifications to $S_S$ on system delay get weaker as voltage moves into the near-threshold regime.
 
- Raychowdhury \cite{Raychowdhury:2006fu} shows this weakening of $S_S$'s effect on delay in figure~\ref{fig:doping}
+ Raychowdhury \cite{Raychowdhury:2006fu} shows this weakening of $S_S$'s effect on delay in Figure~\ref{fig:doping}
   
 \begin{figure}[thpb]
     \centering
