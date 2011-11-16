@@ -18,34 +18,32 @@ slower cores allowing individual tuning of $V_{dd}$ and $V_{th}$ between the
 cores and memory. Using this architecture, the cores still maintain single-cycle
 memory accesses while the core and memory can each operate at their energy
 optimal $V_{dd}$ and $V_{th}$. Running the memory at a higher $V_{dd}$ also
-helps
-mitigate many of the reliability issues affecting SRAM in the near-threshold
-regime.
+helps mitigate many of the reliability issues affecting SRAM in the
+near-threshold regime.
 
 Using this technique, a 71\% energy savings over a baseline single core machine
-on the highly parallel SPLASH2 benchmark is demonstrated. However,
-investigating these claims reveals some shortcomings with this approach.
-Of primary concern is the large area overhead required to achieve the same
-benchmark performance. In order to achieve the same performance as a single core
-baseline system on the \emph{Cholesky} benchmark, 6 cores and 3 times the
-baseline amount of cache were required.  In the worst case, some benchmarks
-require as many as 16 cores and 32 times as much L1 cache (\SI{2}{\mega\byte} vs
-\SI{64}{\kilo\byte}) to achieve the same performance as the baseline.  It is
-important to remember that these results are being presented in comparison to a
-single core reference on a highly parallel workload. By Amdahl's law, the
-speedup from parallelism will have diminishing returns as more cores are added.
-The corollary is that the biggest benefit from parallelism will be realized by
-going from a single core to several cores. Emphasizing this point, their
-results show only a 15\% energy efficiency improvement when moving from a
-traditional $V_{dd}$ scaled CMP to a clustered architecture without $V_{th}$
-tuning.
+on the highly parallel SPLASH2 benchmark is demonstrated. However, investigating
+these claims reveals some shortcomings with this approach.  Of primary concern
+is the large area overhead required to achieve the same benchmark performance.
+In order to achieve the same performance as a single core baseline system on the
+\emph{Cholesky} benchmark, 6 cores and 3 times the baseline amount of cache were
+required.  In the worst case, some benchmarks require as many as 16 cores and 32
+times as much L1 cache (\SI{2}{\mega\byte} vs \SI{64}{\kilo\byte}) to achieve
+the same performance as the baseline.  It is important to remember that these
+results are being presented in comparison to a single core reference on a highly
+parallel workload. By Amdahl's law, the speedup from parallelism will have
+diminishing returns as more cores are added.  The corollary is that the biggest
+benefit from parallelism will be realized by going from a single core to several
+cores. Emphasizing this point, their results show only a an approximate 15\%
+energy efficiency improvement when moving from a traditional $V_{dd}$ scaled CMP
+to a clustered architecture without $V_{th}$ tuning.
 
 The clustering technique also uses separate $V_{th}$ tuning for the core and
 cache to find the energy optimal voltage for the same performance. However, in
-examining what these voltages actually are, it is revealed that neither $V_{dd}$
+examining these voltages actually are, it is revealed that neither $V_{dd}$
 of the cache nor the logic is actually in the near-threshold regime as defined
 by the paper, and both are in fact operating at a $V_{dd}$ 2x--3x higher than
-the selected $V_{th}$. In modern process technologies, the standard is $V_{dd}$
+the selected $V_{th}$. In modern process technologies, the standard $V_{dd}$ is
 already approaching 2x $V_{th}$. As described in Section~\ref{sec:bodybiasing},
 the techniques for tuning $V_{th}$ are also becoming less effective.
 
