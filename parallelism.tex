@@ -1,32 +1,30 @@
-\section{Shortcomings of Application Parallelism}
-\label{sec:darksilicon}
+\section{Shortcomings of Application Parallelism} \label{sec:darksilicon}
 
-Several recent works~\cite{Esmaeilzadeh2011Dark-silicon-an,Hardavellas:2011de}
-have looked at the impact of dark silicon on computing in the near future. While
-the number of transistors on a given die have been doubling every generation,
-the number of transistors that can be powered for a fixed power budget have not
-been increasing due to the slowing of transistor performance scaling. Since
-power budgets have not been increasing past the limits defined by air cooling, a
-situation has arisen where future generations of chips will have more
-transistors than can be powered at any given time. These scenario is commonly
-referred to as dark silicon.
+Deslinkski et al.~\cite{dreslinski2010near} state ``More gates can now fit on a
+die, but a growing fraction cannot actually be used due to strict power
+limits.'' This issue is commonly referred to as dark silicon.  While the number
+of transistors on a given die has been doubling every generation, the number of
+transistors that can be powered for a fixed power budget has not been increasing
+due to the slowing of transistor energy scaling. Since power budgets have not
+been increasing past the limits defined by air cooling, a situation has arisen
+where future generations of chips will potentially have more transistors than
+can be powered at any given time.  Several recent
+works~\cite{Esmaeilzadeh2011Dark-silicon-an,Hardavellas:2011de} have looked at
+the impact of dark silicon on computing in the near future. 
 
 Dark silicon seemingly presents an opportunity for near-threshold computing, and
 as a way of addressing the large area overheads of the clustering architectures
-discussed in Section~\ref{sec:clustering}.  Deslinkski et
-al.~\cite{dreslinski2010near} state ``More gates can now fit on a die, but a
-growing fraction cannot actually be used due to strict power limits.'' By
-reducing the power consumed per-core, more cores can be integrated and
-simultaneously powered. Since these cores would be unpowered in a
-super-threshold chip, this represents an opportunity for near-threshold chips to
-regain performance compared to super-threshold operation.
+discussed in Section~\ref{sec:clustering}. By reducing the power consumed
+per-core, more cores can be simultaneously powered. Since these cores could not
+be powered in a super-threshold chip, this represents an opportunity for
+near-threshold chips to regain performance compared to super-threshold
+operation.
 
-\begin{figure}[thpb]
-    \centering
-    \includegraphics[width=0.3\textwidth]{esmaeilzadeh_power_speedups.png}
-    \caption{Projected speedups on PARSEC benchmarks while the chip power
-limit (and therefore the number of cores) is increased.~\cite{Esmaeilzadeh2011Dark-silicon-an}}
-    \label{fig:power_speedups}
+\begin{figure}[thpb] \centering
+\includegraphics[width=0.3\textwidth]{esmaeilzadeh_power_speedups.png}
+\caption{Projected speedups on PARSEC benchmarks while the chip power limit (and
+therefore the number of cores) is
+increased.~\cite{Esmaeilzadeh2011Dark-silicon-an}} \label{fig:power_speedups}
 \end{figure}
 
 While dark silicon is an opportunity for devices to reach higher levels of
@@ -35,10 +33,10 @@ of higher levels of performance with increasing core counts.  Work by
 Esmaeilzadeh et. al~\cite{Esmaeilzadeh2011Dark-silicon-an} developed an
 analytical model analyzing the impact of dark silicon for a range of CMP
 configurations in future process technologies. They show projected speedups for
-these configurations and process technologies using the PARSEC benchmark suite,
+these configurations using the PARSEC benchmark suite,
 which represents workloads similar to the SPLASH2 benchmark suite used in the
 previously discussed clustering architecture
-papers~\cite{dreslinski2010near,Zhai:2007kn}, indicating that they are targeting
+papers~\cite{dreslinski2010near,Zhai:2007kn}, indicating that both works are targeting
 similar applications. This analytical model does project that dark silicon will
 become a significant portion of CPUs in the near future, dominating as soon as
 2016 assuming conservative scaling parameters. However, the authors also analyze
@@ -59,19 +57,15 @@ multi-core chips. While near-threshold computing would allow more chips to be
 powered, it would not realize a significant speedup on most general-purpose
 parallel workloads due to the lack of exploitable parallelism.
 
-\begin{figure}[thpb]
-    \centering
-    \includegraphics[width=0.4\textwidth]{hardavellas_core_counts.png}
-    \caption{Projections for core count scaling.~\cite{Hardavellas:2011de}}
-    \label{fig:core_counts}
-\end{figure}
+\begin{figure}[thpb] \centering
+\includegraphics[width=0.4\textwidth]{hardavellas_core_counts.png}
+\caption{Projections for core count scaling.~\cite{Hardavellas:2011de}}
+\label{fig:core_counts} \end{figure}
 
-\begin{figure}[thpb]
-    \centering
-    \includegraphics[width=0.4\textwidth]{hardavellas_emb_performance.png}
-    \caption{Embedded core scaling.~\cite{Hardavellas:2011de}}
-    \label{fig:emb_performance}
-\end{figure}
+\begin{figure}[thpb] \centering
+\includegraphics[width=0.4\textwidth]{hardavellas_emb_performance.png}
+\caption{Embedded core scaling.~\cite{Hardavellas:2011de}}
+\label{fig:emb_performance} \end{figure}
 
 Further work by Hardavellas et al.~\cite{Hardavellas:2011de} confirms the
 observation that future speedups are limited by application level parallelism,
@@ -83,8 +77,8 @@ built without increasing power or die size constraints, where the ``Max EMB
 cores'' line represents the maximum number of cores that could fit on the same
 die area.  Their model projects that in 2017 over 1024 cores will be able to fit
 on a die, but only 12\% of them will be able to be powered at any given time.
-This again looks like an opportunity for near-threshold computing to increase
-core counts over traditional core counts.
+Again, this looks like an opportunity for near-threshold computing to increase
+core counts over traditional super-threshold CMPs.
 
 Figure~\ref{fig:emb_performance} shows the maximum performance of an EMB-based
 CMP given different constraints for a 99\% parallel workload. The ``Area
@@ -96,9 +90,9 @@ only has approximately half the performance of the unconstrained case. Again,
 the performance is limited by the application parallelism, not the number of
 cores integrated onto the chip.
 
-While scaling trends do indicate that soon chips will be able to integrate more
-cores than can simultaneously be powered, it is actually current extractable
-levels of parallelism in general-purpose parallel workloads that limits
+While scaling trends do indicate that soon, chips will be able to integrate more
+cores than can simultaneously be powered, it is actually current 
+levels of application parallelism in general-purpose parallel workloads that limits
 performance even more. While NTC processors could support increased core counts
 over super-threshold chips, they would not be able to gain back a significant
 amount of the performance loss as super-threshold core counts are approaching
