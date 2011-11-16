@@ -1,4 +1,8 @@
 \section{Introduction}
 \label{sec:intro}
 
-This is the intro.
+Power consumption and heat removal has become one of the top concerns in the server space. According to the International Technology Roadmap for Semiconductors, power consumption for each generation of chips is growing, making it one of the most significant roadblocks to future scaling \cite{Devised_2009}. 
+
+One recently proposed  solution to this increased power is to operate the microprocessor at a significantly lowered voltage, approaching the threshold voltage of its transistors\cite{Dreslinski:2010ez}. This mode of operation will yield approximately a 10x energy savings at the cost of 10x performance loss and a 20x total performance uncertainty. It has been claimed that many of these downsides can be mitigated by techniques such as device optimizations, variation tolerant circuit design, and body biasing as well as architectural changes such as increased parallelism and a move to a clustering-based architecture.
+
+Although at first glance these improvements may seem to be able to regain much of the performance loss associated with near-threshold computing, the techniques do not hold up to closer scrutiny. We have shown that many of the ideas presented in \cite{Dreslinski:2010ez} are ineffective at recovering the performance lost due to near-threshold computing in the context of a server environment.
