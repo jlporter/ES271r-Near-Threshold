@@ -10,33 +10,33 @@ the NTC regime. The proposed architecture groups multiple slower-cores into
 clusters which share a faster L1 cache. The cache operates at $n$ times higher
 frequency than the cores, where $n$ is the number of cores in a cluster. This is
 motivated by the observation that SRAM has a higher energy optimal $V_{dd}$ and
-$V_{th}$ than logic due to its lower activity factor and higher leakage energy
-component. As a result of SRAMs higher energy optimal $V_{dd}$, the energy
+$V_{th}$ than logic due to its lower activity factor and higher relative
+leakage.  As a result of SRAMs higher energy optimal $V_{dd}$, the energy
 optimal frequency of memory is higher than that of logic.  Based on this
 observation, the proposed technique shares the first-level cache with multiple,
 slower cores allowing individual tuning of $V_{dd}$ and $V_{th}$ between the
 cores and memory. Using this architecture, the cores still maintain single-cycle
 memory accesses while the core and memory can each operate at their energy
-optimal $V_{dd}$ and $V_{th}$. Running the memory at a higher $V_{dd}$ also help
+optimal $V_{dd}$ and $V_{th}$. Running the memory at a higher $V_{dd}$ also
+helps
 mitigate many of the reliability issues affecting SRAM in the near-threshold
 regime.
 
 Using this technique, a 71\% energy savings over a baseline single core machine
-on the highly parallel SPLASH2 benchmark is demonstrated. However, in
-investigating these claims, some shortcomings with this approach are revealed.
+on the highly parallel SPLASH2 benchmark is demonstrated. However,
+investigating these claims reveals some shortcomings with this approach.
 Of primary concern is the large area overhead required to achieve the same
 benchmark performance. In order to achieve the same performance as a single core
-baseline system, 6 cores and 3 times the baseline amount of cache were required.
-It is important to remember that these results are being presented in comparison
-to a single core reference on a highly parallel workload. By Amdahl's law, the
+baseline system on the \emph{Cholesky} benchmark, 6 cores and 3 times the
+baseline amount of cache were required.  In the worst case, some benchmarks
+require as many as 16 cores and 32 times as much L1 cache (\SI{2}{\mega\byte} vs
+\SI{64}{\kilo\byte}) to achieve the same performance as the baseline.  It is
+important to remember that these results are being presented in comparison to a
+single core reference on a highly parallel workload. By Amdahl's law, the
 speedup from parallelism will have diminishing returns as more cores are added.
 The corollary is that the biggest benefit from parallelism will be realized by
-going from a single core to several cores.  It would require a larger number of
-cores to achieve the same level of parallelism when comparing with a baseline
-system that included more than a single core. In fact, to achieve the same
-performance as the baseline, some benchmarks require as many as 16 cores and 32
-times as much L1 cache (\SI{2}{\mega\byte} vs \SI{64}{\kilo\byte}). Their
-results show very little energy efficiency improvement when moving from a
+going from a single core to several cores. Emphasizing this point, their
+results show only a 15\% energy efficiency improvement when moving from a
 traditional $V_{dd}$ scaled CMP to a clustered architecture without $V_{th}$
 tuning.
 

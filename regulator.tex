@@ -1,47 +1,50 @@
 \section{Voltage Regulators}
-\label{sec:regulators}
 
-As shown in [A], compared to operating a digital design at the nominal voltage,
-operating a design at a supply voltage level that is near the device threshold
-voltage provides more energy-efficient computations. However, to fairly evaluate
-the energy saving obtainable from the near-threshold computing approach, the
-overhead in generating a near-threshold supply needs to be evaluated. Both [B]
-and [C] raised the concern that the efficiency of the voltage regulator would be
-lower for delivering power to a near-threshold computing design. [B] presents
-evidence that typical voltage regulator efficiency is lower at light load and
-argues that if a near-threshold design consumes less power the efficiency will
-be lower.  [C] considers the case where the chip supply voltage is generated
-with an on-chip switch-capacitor converter. They shows that the efficiency of
-the regulator is at 90\% for an output voltage of \SI{1.2}{\volt} and is at 70\%
-for an output voltage of \SI{0.5}{\volt}.
+We already know logic gates computes more efficiently at a supply voltage level
+that is near the device threshold voltage. When we attempt to translate the
+energy efficiency of these gates to the energy efficiency of a whole system, we
+need to carefully evaluate the associated overhead.
+Both~\cite{dreslinski2010near,Zhai:2007kn}
+and~\cite{dreslinski2010near,Zhai:2007kn} raised the concern that the efficiency
+of the voltage regulator would be lower for delivering power to a near-threshold
+computing design. \cite{dreslinski2010near,Zhai:2007kn} presents evidence that
+typical voltage regulator efficiency is lower at light load and argues that if a
+near threshold design consumes less power the efficiency will be lower.
+\cite{dreslinski2010near,Zhai:2007kn} considers the case where the chip supply
+voltage is generated with an on-chip switch-capacitor converter. They shows that
+the efficiency of the regulator is at 90\% for an output voltage of 1.2V and is
+at 70\% for an output voltage of 0.5V.
 
-In the context of server computing, power is typically delivered to the
-microprocessor through a buck converter which down converts the \SI{12}{\volt}
-motherboard voltage [].Although it is difficult to derive a quantitative
-comparison between the efficiency of a \SI{1.2}{\volt} output for an above
-threshold design and a \SI{0.5}{\volt} output for a near-threshold design, it is
-possible to consider the difference in requirement for these two regulators and
-understand where the difference in efficiency may come in. It is intuitive to
-compare the above threshold converter and the near-threshold converter at the
-same percentage of voltage ripple requirement. However, as shown in equation X3,
-the delay of a logic gate is more sensitive to the supply voltage in the
-near-threshold region.  Thus, if voltage ripple requirement is the same, the
-near-threshold DC-DC converter will introduce more delay variation in the
-design. As performance variation has already been one of the key limiting
-factors for near-threshold computing, it is desirable to maintain the same
-variation level due to voltage ripple. Thus, it is necessary to have a stringent
-voltage ripple requirement for a near-threshold voltage regulator. 
+In the context of server computing, the power is delivered to the
+microprocessors typically through a buck converter which down converts the 12V
+mother board voltage~\cite{dreslinski2010near,Zhai:2007kn}. Although it is
+difficult to derive a quantitative comparison between the efficiency of a 1.2V
+output for an above threshold design and a 0.5 output for a near threshold
+design, it is possible to consider the difference in requirement for these two
+regulators and understand where the difference in efficiency may come in. 
 
-In addition, the current consumption of the two regulators will also be
-different. One of the goals of employing near-threshold computing for servers is
-to reduce power consumption while maintaining throughput. However, unless
-near-threshold computing can achieve power reduction by a factor that is larger
-than the supply voltage ratio, the current drawn by a near-threshold design is
-going to be higher. This higher output current is particularly problematic for
-the power loss due to the output rectification. The efficiency loss in the
-output rectification is the ratio between the output voltage and the voltage
-drop across the output transistor. Since the output voltage is small, the
-regulator is more sensitive to voltage drop across the output transistor. On top
-of that, the higher output current further increases the voltage drop across the
-output stage.  
+The performance of digital circuits is highly susceptible to power supply noise.
+This susceptible is worse when the design is operating in the near threshold
+region, as shown earlier in figure ~\ref{fig:voltage_delay}). On the other hand,
+the power supply noise is a function of load stepping and decoupling capacitor.
+Since load stepping is a function of the processor architecture, we can assume
+simply scale down the supply voltage would not change the magnitude of the power
+supply noise. This power supply noise is a larger percentage of the supply
+voltage when the design is operating in near threshold region. As a result, it
+cause more delay variation in the design. As performance variation has already
+been one of the key limiting factors for near threshold computing, it become
+necessary to suppress this voltage noise at the price of efficiency, board area
+or chip area by increasing the feedback loop bandwidth and adding more
+decoupling capacitors.
 
+In addition,  one of the goals of employing near threshold computing for servers
+is to reduce power consumption while maintaining throughput. However, unless
+near threshold computing can achieve processor power reduction by a factor that
+is larger than the factor supply voltage is reduced by, the current drawn by a
+near threshold design is going to be higher. This higher output current is
+particular problematic for the power loss due to the output rectification. The
+efficiency loss in the output rectification is the ratio between the output
+voltage and the voltage drop across the output transistor. Since the output
+voltage is small, the regulator is more sensitive to voltage drop across the
+output transistor. On top of that, the higher output current further increases
+the voltage drop across the output stage.  

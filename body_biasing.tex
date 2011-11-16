@@ -9,41 +9,84 @@ technology scales to smaller dimension. In every technology generation, the gate
 oxide capacitance $C_{ox}$ is scaled up for a factor 0.7 and the doping
 concentration of the channel is scaled up by a factor of 0.7. By equation X1,
 the combined effect of scaling these two parameters reduces the body effect
-parameter $\gamma$, which determines the effectiveness in using body biasing to
+parameter gamma, which determines the effectiveness in using body biasing to
 modify the device threshold voltage as shown in equation X2.
 
+\begin{equation}
+V_{T} = V_{TO} + \gamma ( \sqrt{ | {V_{SB} + 2\phi_{F} | } } - \sqrt{ | 2\phi_{F} | } 
+\end{equation}
+
+\begin{equation}
+\gamma = (1/C_{ox})\sqrt{2q\epsilon_{si}N_A}
+\end{equation}
+
 On the other hand, systematic variation such as gate length is increasing with
-every successive technology. [] shows that $\sigma$ of the critical dimension
-variation caused by line edge roughness has been around \SI{5}{\nano\meter} and
-remained roughly constant across different technology node. As a result, the
-variability in delay continues to rise with technology scaling. 
+every successive technology. [] shows that sigma of the critical dimension
+variation caused by line edge roughness has been around 5nm and remained roughly
+constant across different technology node. As a result, the variability in delay
+continues to rise with technology scaling. 
 
 Under these two trends, the need for body biasing compensation is increasing
 while the effectiveness of body biasing is decreasing. Nevertheless, when the
-body biasing technique is applied to a near-threshold design, the delay tuning
+body biasing technique is applied to a near threshold design, the delay tuning
 range is much larger for the same amount of threshold modulation. Yet at the
 same time, since a near-threshold design is more sensitive to process variation,
-it is not obvious whether body biasing is more effective for a near-threshold
+it is not obvious whether body biasing is more effective for a near threshold
 design. 
 
-To make better comparison between the effectiveness of body biasing for both an
-above threshold design and a near-threshold design across different technology
-nodes,  we simulate the propagation  delay of a 6 FO4 inverter delay chain in
-\SI{32}{\nano\meter}, \SI{22}{\nano\meter} and \SI{16}{\nano\meter} using ASU
-Technology Predictive Model []. To simplify the analysis, the only variation
-considered is within-die systematic and die-to-die gate length variation. The
-inverter chain is first simulated with no body-biasing and no gate length
-variation to find the nominal delay. Forward body biasing can restore the delay
-of the inverter chain to nominal value when the inverter chain is slow as a
-result of gate length variation. While maintaining the nominal delay, we can
-evaluate the amount of body biasng necessary to compensate for a given magnitude
-gate length variation. The effectiveness of body biasing at a given technology
-node is measured by the percentage of gate length variation which bodying
-biasing is able to compensate for. 
+To make a quantitative comparison between the effectiveness of body biasing for
+both an above threshold design and a near threshold design across different
+technology nodes,  we simulate the propagation  delay of a 6 FO4 inverter delay
+chain in 32nm, 22nm and 16nm using ASU Technology Predictive Model []. To
+simplify the analysis, the only variation considered is within-die systematic
+and die-to-die gate length variation. Table X and table y shows the delay of the
+inverter chain  without applying body biasing and with maximum forward body
+biasing when no variation is presented. The results show that body biasing
+indeed influence the delay of the inverter chain by a large percentage in the
+near threshold region, but across technology node, the performance improvement
+with maximum body biasing is decreasing.   
 
-As shown in table[xx], although body biasing is much more effective for
-near-threshold computing. It is still not sufficient to combat the every
-increased gate length variation. Thus, body biasing cannot be the sole
-technology to be relied on to solve the variability issues in near-threshold
-computing. 
+\begin{center}
+  \begin{tabular}{ | l | l | l | l | }
+    \hline
+    & 32nm & 22nm & 16nm \\ \hline
+    nominal delay(ps) & 45.0 & 26.0 & 17.2 \\ \hline
+    maxiumum $V_{BBfwd}$ (ps)  & 35.5 & 21.1 & 14.2 \\  \hline
+    percentage change  & 21\% & 18.9\% & 17.1\% \\ 
+    \hline
+  \end{tabular}
+\end{center}
 
+
+\begin{center}
+  \begin{tabular}{ | l | l | l | l | }
+    \hline
+    & 32nm & 22nm & 16nm \\ \hline
+    nominal delay(ps) & 1709 & 464 & 207 \\ \hline
+    maxiumum $V_{BBfwd}$ (ps)  & 541 & 195 & 105 \\  \hline
+    percentage change  & 69\% & 58\% & 49.3 \\ 
+    \hline
+  \end{tabular}
+\end{center}
+
+Table Z shows the result When we include variation in the model. The
+effectiveness of process compensation by body biasing is measured in terms of
+magnitude of gate length variation body biasing can restore. As suggested by
+the model, although the compensation is very effective in 35nm for near
+threshold computing, being able to compensate for 53\% of gate length variation,
+this number will quickly be quickly be reduced to 11.8\% in two technology node.
+At the same time, as argued earlier the gate length variation is increasing. In
+future technology generation, the body biasing technique would not be sufficient
+to offset the delay variation for near threshold computing.    
+
+\begin{center}
+  \begin{tabular}{ | l | l | l | l | }
+    \hline
+    & 32nm & 22nm & 16nm \\ \hline
+    above Vt(nm) & 3.8 & 1.5 & 0.8 \\ \hline
+    \% compnesation in L  & 10.8\% & 6.8\% & 5\% \\ \hline
+    near Vt(nm)  & 17 & 4.3 & 1.9\\  \hline
+    \% compnesation in L & 53\% & 19.5\% & 11.8\% \\ 
+    \hline
+  \end{tabular}
+\end{center}
