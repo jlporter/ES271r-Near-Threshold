@@ -4,20 +4,20 @@ We already know logic gates computes more efficiently at a supply voltage level
 that is near the device threshold voltage. When we attempt to translate the
 energy efficiency of these gates to the energy efficiency of a whole system, we
 need to carefully evaluate the associated overhead.
-Both~\cite{dreslinski2010near,Zhai:2007kn}
-and~\cite{dreslinski2010near,Zhai:2007kn} raised the concern that the efficiency
+Both~\cite{ISLPED:2011}
+and~\cite{Pitfall:2010} raised the concern that the efficiency
 of the voltage regulator would be lower for delivering power to a near-threshold
-computing design. \cite{dreslinski2010near,Zhai:2007kn} presents evidence that
+computing design. \cite{ISLPED:2011} presents evidence that
 typical voltage regulator efficiency is lower at light load and argues that if a
 near threshold design consumes less power the efficiency will be lower.
-\cite{dreslinski2010near,Zhai:2007kn} considers the case where the chip supply
+\cite{Pitfall:2010} considers the case where the chip supply
 voltage is generated with an on-chip switch-capacitor converter. They shows that
 the efficiency of the regulator is at 90\% for an output voltage of 1.2V and is
 at 70\% for an output voltage of 0.5V.
 
 In the context of server computing, the power is delivered to the
 microprocessors typically through a buck converter which down converts the 12V
-mother board voltage~\cite{dreslinski2010near,Zhai:2007kn}. Although it is
+mother board voltage~\cite{Server:2006}. Although it is
 difficult to derive a quantitative comparison between the efficiency of a 1.2V
 output for an above threshold design and a 0.5 output for a near threshold
 design, it is possible to consider the difference in requirement for these two
