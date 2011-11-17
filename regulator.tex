@@ -24,18 +24,11 @@ design, it is possible to consider the difference in requirement for these two
 regulators and understand where the difference in efficiency may come in. 
 
 The performance of digital circuits is highly susceptible to power supply noise.
-This susceptible is worse when the design is operating in the near threshold
+This susceptibility is worse when the design is operating in the near threshold
 region, as shown earlier in figure ~\ref{fig:voltage_delay}). On the other hand,
-the power supply noise is a function of load stepping and decoupling capacitor.
-Since load stepping is a function of the processor architecture, we can assume
-simply scale down the supply voltage would not change the magnitude of the power
-supply noise. This power supply noise is a larger percentage of the supply
-voltage when the design is operating in near threshold region. As a result, it
-cause more delay variation in the design. As performance variation has already
-been one of the key limiting factors for near threshold computing, it become
-necessary to suppress this voltage noise at the price of efficiency, board area
-or chip area by increasing the feedback loop bandwidth and adding more
-decoupling capacitors.
+the worst case power supply noise is related to the transient response of the regulator to a load change. When the processor has a sudden change in load current,  the difference in current the inductor and load is going to cause to output voltage to rise or drop, hence creating voltage noise. \cite{Transient} shows for a high-step down ratio buck converter, the worst case is during a load step-down where the voltage across the inductor is -$V_{out}$. Since $V_{out}$ is small, the inductor current is discharged at a slow rate and it takes a long time for it to match the load current. If  $V_{out}$ is further reduced, the transient performance is going to degrade more. Thus, when the output voltage of the regulator is at the level of near-threshold, the processor has high performance variability due both high sensitivty to power supply noise and  larger supply noise. 
+Alternatively, it is possible to  improve the transient performance of the regulator, but it comes at the price of efficiency, board area
+or chip area when transient response is improved by reducing the output inductance or adding more decoupling capacitors.
 
 In addition,  one of the goals of employing near threshold computing for servers
 is to reduce power consumption while maintaining throughput. However, unless

@@ -7,17 +7,18 @@ intra-die variation. However, it has been increasingly challenging to employ
 this technique because the effect of body biasing is decreasing as transistor
 technology scales to smaller dimension. In every technology generation, the gate
 oxide capacitance $C_{ox}$ is scaled up for a factor 0.7 and the doping
-concentration of the channel is scaled up by a factor of 0.7. By equation X1,
-the combined effect of scaling these two parameters reduces the body effect
-parameter gamma, which determines the effectiveness in using body biasing to
-modify the device threshold voltage as shown in equation X2.
-
-\begin{equation}
-V_{T} = V_{TO} + \gamma ( \sqrt{ | {V_{SB} + 2\phi_{F} | } } - \sqrt{ | 2\phi_{F} | } 
-\end{equation}
+concentration of the channel is scaled up by a factor of 0.7. By the equation,
 
 \begin{equation}
 \gamma = (1/C_{ox})\sqrt{2q\epsilon_{si}N_A}
+\end{equation}
+
+The combined effect of scaling these two parameters reduces the body effect
+parameter gamma, which determines the effectiveness in using body biasing to
+modify the device threshold voltage as shown in following equation.
+
+\begin{equation}
+V_{T} = V_{TO} + \gamma ( \sqrt{ | {V_{SB} + 2\phi_{F} | } } - \sqrt{ | 2\phi_{F} | } 
 \end{equation}
 
 With various resolution enhancement technique, the systematic variation in gate length has been kept to a steady percentage of the gate length variation in recent technology node~\cite{Intel:2009}. Intel shows that sigma of the system variation gate length variation is managed to apprximately 3\% across different technology node~\cite{Intel:2009}. However, due to the inherent resolution limitation in current lithogothy process, percentage of gate length variation in future technology generation may start to increase again~\cite{OPC20}.    
@@ -35,7 +36,7 @@ To make a quantative comparison between the effectiveness of body biasing for bo
 above threshold design and a near threshold design across different technology
 nodes,  we simulate the propagation  delay of a 6 FO4 inverter delay chain in
 32nm, 22nm and 16nm using ASU Technology Predictive Model \cite{PredictiveModel}. To simplify the
-analysis, the only variation considered is within-die systematic variation. To limit the leakage power overhead to 100\% when body biasing is applied, the maxiumum forward body biasing is set to be 0.2V.  Table~\ref{body1} and table~\ref{body2} shows the delay of the inverter chain for zero body biasing and maxiumum forward body biasing when no variation is presented. The results show that body biasing indeed influence the delay of the inverter chain by a large percentage in the near threshold region, but across technolgoy node, the performance improvment with maxiumum body biasing is decreasing.   
+analysis, the systematic variation within-die systematic variation is represented as gate length variation. To limit the leakage power overhead to 100\% when body biasing is applied, the maxiumum forward body biasing is set to be 0.2V.  Table~\ref{body1} and table~\ref{body2} shows the delay of the inverter chain for zero body biasing and maxiumum forward body biasing when no variation is presented. The results show that body biasing indeed influence the delay of the inverter chain by a large percentage in the near threshold region, but across technolgoy node, the performance improvment with maxiumum body biasing is decreasing.   
 
 
 \begin{table}
