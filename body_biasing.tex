@@ -26,7 +26,8 @@ variation caused by line edge roughness has been around 5nm and remained roughly
 constant across different technology node. As a result, the variability in delay
 continues to rise with technology scaling. 
 
-Under these two trends, the need for body biasing compensation is increasing
+
+Under these two trends, the need for body biasing compensation is potentially increasing
 while the effectiveness of body biasing is decreasing. Nevertheless, when the
 body biasing technique is applied to a near threshold design, the delay tuning
 range is much larger for the same amount of threshold modulation. Yet at the
@@ -34,59 +35,56 @@ same time, since a near-threshold design is more sensitive to process variation,
 it is not obvious whether body biasing is more effective for a near threshold
 design. 
 
-To make a quantitative comparison between the effectiveness of body biasing for
-both an above threshold design and a near threshold design across different
-technology nodes,  we simulate the propagation  delay of a 6 FO4 inverter delay
-chain in 32nm, 22nm and 16nm using ASU Technology Predictive Model []. To
-simplify the analysis, the only variation considered is within-die systematic
-and die-to-die gate length variation. Table X and table y shows the delay of the
-inverter chain  without applying body biasing and with maximum forward body
-biasing when no variation is presented. The results show that body biasing
-indeed influence the delay of the inverter chain by a large percentage in the
-near threshold region, but across technology node, the performance improvement
-with maximum body biasing is decreasing.   
+To make a quantative comparison between the effectiveness of body biasing for both an
+above threshold design and a near threshold design across different technology
+nodes,  we simulate the propagation  delay of a 6 FO4 inverter delay chain in
+32nm, 22nm and 16nm using ASU Technology Predictive Model \cite{PredictiveModel}. To simplify the
+analysis, the only variation considered is within-die systematic variation. To limit the leakage power overhead to 100\% when body biasing is applied, the maxiumum forward body biasing is set to be 0.2V.  Table~\ref{body1} and table~\ref{body2} shows the delay of the inverter chain for zero body biasing and maxiumum forward body biasing when no variation is presented. The results show that body biasing indeed influence the delay of the inverter chain by a large percentage in the near threshold region, but across technolgoy node, the performance improvment with maxiumum body biasing is decreasing.   
 
-\begin{center}
+
+\begin{table}
+  \caption {Peformance improvement by body-biasing in above threshold computing} 
+  \centering 
+  \label {body1}
   \begin{tabular}{ | l | l | l | l | }
     \hline
     & 32nm & 22nm & 16nm \\ \hline
     nominal delay(ps) & 45.0 & 26.0 & 17.2 \\ \hline
-    maxiumum $V_{BBfwd}$ (ps)  & 35.5 & 21.1 & 14.2 \\  \hline
-    percentage change  & 21\% & 18.9\% & 17.1\% \\ 
+    maxiumum $V_{BBfwd}$ (ps)  & 41.3 & 24 & 15.9 \\  \hline
+    percentage change  & 8.2\% & 7.7\% & 7.5\% \\ 
     \hline
   \end{tabular}
-\end{center}
+\end{table}
 
 
-\begin{center}
+
+\begin{table}
+  \caption {Peformance improvement by body-biasing in near threshold computing}  
+  \centering
+  \label {body2}
   \begin{tabular}{ | l | l | l | l | }
     \hline
     & 32nm & 22nm & 16nm \\ \hline
     nominal delay(ps) & 1709 & 464 & 207 \\ \hline
-    maxiumum $V_{BBfwd}$ (ps)  & 541 & 195 & 105 \\  \hline
-    percentage change  & 69\% & 58\% & 49.3 \\ 
+    maxiumum $V_{BBfwd}$ (ps)  & 889 & 278 & 139 \\  \hline
+    percentage change  & 48\% & 40\% & 33\% \\ 
     \hline
   \end{tabular}
-\end{center}
+\end{table}
 
-Table Z shows the result When we include variation in the model. The
-effectiveness of process compensation by body biasing is measured in terms of
-magnitude of gate length variation body biasing can restore. As suggested by
-the model, although the compensation is very effective in 35nm for near
-threshold computing, being able to compensate for 53\% of gate length variation,
-this number will quickly be quickly be reduced to 11.8\% in two technology node.
-At the same time, as argued earlier the gate length variation is increasing. In
-future technology generation, the body biasing technique would not be sufficient
-to offset the delay variation for near threshold computing.    
+Table~\ref{compensation} shows the result when variation is included in the model. The effectiveness of process compensation by body biasing is measured in terms of magnitude of gate length variation body biasing can restore. As suggestied by the model, although the compensation is very effective in 35nm for near threshold computing, being able to compensate for 53\% of gate length variation, this number will quickly be quickly be reduced to 11.8\% in two technolgoy node. At the same time, as argued earlier the gate length variation is increasing. In future technology generation, the body biasing technique would not be sufficient to offset the delay variation for near threshold computing.    
 
-\begin{center}
+\begin{table}
+  \caption {Variation compensation by body-biasing}  
+  \centering
+  \label {compensation}
   \begin{tabular}{ | l | l | l | l | }
     \hline
     & 32nm & 22nm & 16nm \\ \hline
-    above Vt(nm) & 3.8 & 1.5 & 0.8 \\ \hline
-    \% compnesation in L  & 10.8\% & 6.8\% & 5\% \\ \hline
-    near Vt(nm)  & 17 & 4.3 & 1.9\\  \hline
-    \% compnesation in L & 53\% & 19.5\% & 11.8\% \\ 
+    above Vt(nm) & 1.2 & 0.8 & 0.3 \\ \hline
+    \% compnesation in L  & 3.75\% & 3.6\% & 1.9\% \\ \hline
+    near Vt(nm)  & 6.8 & 1.9 & 0.9\\  \hline
+    \% compnesation in L & 21.25\% & 8.64\% & 5.62\% \\ 
     \hline
   \end{tabular}
-\end{center}
+\end{table}
