@@ -6,9 +6,9 @@ A critical path can be defined as any path that has a high probability of exceed
 For our case of trying to find the maximum frequency a given device can run, we can instead consider a critical path as a path that has a high probability of setting FMAX; that is, of being the slowest path in the system.
   
 Consider a distribution of the nominal delays of paths within a chip (Figure~\ref{fig:normal}).
-In the case of no variations, clock speed is set by the path with the highest nominal delay.
-Once delay variation is added in, however, points that are close in delay to the path with the highest nominal delay could act instead as the critical path in a portion of chips.
-This means that it is any path that falls within $n\frac{\sigma_v}{\mu}$ of the maximum nominal delay for a given $n$ that is set by the design where $\sigma_v$ is the standard deviation and $\mu$ is the mean of the timing path variation distribution.
+In the case of no variations, clock speed is set by the path with the highest nominal delay (the nominal critical path).
+Once delay variation is added in, however, paths that are close in delay to the nominal critical path could act instead as the critical path in a portion of chips.
+This means that it is any path that falls within $n\frac{\sigma_v}{\mu}$ of the maximum nominal delay where $n$ is a constant that sets the guardband, $\sigma_v$ is the standard deviation, and $\mu$ is the mean of the timing path variation distribution.
 The number of critical paths then becomes the area under this delay-count curve where the delay is greater than $n\frac{\sigma_v}{\mu}$
  
 \begin{figure}[thpb]

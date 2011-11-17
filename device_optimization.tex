@@ -4,14 +4,16 @@
 Dreslinski et al. \cite{Dreslinski:2010ez} suggest modifications of the transistor structure to reduce delay by reducing inverse sub-threshold slope ($S_S$). 
 This can take the form of either modifying the channel doping profile \cite{Paul:2004cx} or increasing oxide length \cite{Hanson:2007uu}.
 
-Hanson shows that the main delay benefit from scaling $S_S$ comes from the assumption that the system voltage set to the minimum energy point of the CMOS logic, a point far into sub-threshold that is proportional to $S_S$~\cite{Hanson:2007uu}. 
+Hanson~\cite{Hanson:2007uu} shows that the main delay benefit from scaling $S_S$ comes from the assumption that the system voltage is set to the minimum energy point of the CMOS logic, a point far into sub-threshold that is proportional to $S_S$~\cite{Hanson:2007uu}. 
 
 \begin{align}
 t_p&=\frac{k_d \cdot C_L \cdot K_{V_{min}} \cdot S_S}{I_{off} \cdot 10^\frac{K_{V_{min}S_S}}{S_S}}\\
 &\propto \frac{C_L \cdot S_S}{I_{off}}
 \end{align}
 
-For near-threshold operation, the voltage is instead set by the transistor threshold voltage. 
+%TODO reference the previous equation with a label
+
+For near-threshold operation, the system voltage is instead set by the transistor threshold voltage. 
 With the voltage dependence on $S_S$ removed, this equation instead becomes
 
 \begin{equation}
@@ -22,9 +24,9 @@ which is a much weaker effect considering that $S_S$ in the range of 80-90mV/dec
 
 The actual correlation of delay to $S_S$ is even weaker because Hanson is using an equation that assumes the circuit is operating far sub-threshold. 
 As $V_{DD}$ passes $V_{TH}$, the current and delay begin to instead scale with an interpolation between super-threshold and sub-threshold models rather than just the sub-threshold model. 
-Because the super-threshold model doesn't have a reliance on $S_S$, this means that the effect of modifications to $S_S$ on system delay get weaker as voltage moves from sub-threshold into the near-threshold regime.
+Because the super-threshold model does not have a reliance on $S_S$, this means that the effect of modifications to $S_S$, such as modifying the channel doping profile or increasing the oxide length, on system delay get weaker as voltage moves from sub-threshold into the near-threshold regime.
 
- Raychowdhury \cite{Raychowdhury:2006fu} shows this weakening of $S_S$'s effect on delay in Figure~\ref{fig:doping}. As $V_DD$ increases, the delays of the standard and optimized CMOS devices get closer.
+ Raychowdhury \cite{Raychowdhury:2006fu} shows this weakening of $S_S$'s effect on delay in Figure~\ref{fig:doping}. As $V_{DD}$ increases, the delays of the standard and optimized CMOS devices get closer.
   
 \begin{figure}[thpb]
     \centering

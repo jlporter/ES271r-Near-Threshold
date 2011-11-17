@@ -1,12 +1,11 @@
-\section{Near-Threshold Parallel Architectures} \label{sec:clustering}
+\section{Near-Threshold Parallel Architectures}
+\label{sec:clustering}
 
-Dreslinski et al.~\cite{dreslinski2010near} claim ``In applications where there
-is an abundance of thread-level parallelism the intention is to use 10 s to 100
-s of NTC processor cores that will regain 10-–50X of the performance, while
-remaining energy efficient.'' In order to regain the performance lost from using
-near-threshold techniques, Zhai et al.~\cite{Zhai:2007kn} and Dreslinski et
+Dreslinski et al.~\cite{Dreslinski:2010ez} claim ``In applications where there is an abundance of thread-level parallelism the intention is to use 10s to 100s of NTC processor cores that will regain 10-–50x of the performance, while
+remaining energy efficient.''
+In order to regain the performance lost from using near-threshold techniques, Zhai et al.~\cite{Zhai:2007kn} and Dreslinski et
 al.~\cite{Dreslinski:2007id} present a technique for leveraging parallelism in
-the NTC regime. The proposed architecture groups multiple slower-cores into
+the NTC regime. The proposed architecture groups multiple slower cores into
 clusters which share a faster L1 cache. The cache operates at $n$ times higher
 frequency than the cores, where $n$ is the number of cores in a cluster. This is
 motivated by the observation that SRAM has a higher energy optimal $V_{dd}$ and
@@ -24,28 +23,23 @@ near-threshold regime.
 Using this technique, a 71\% energy savings over a baseline single core machine
 on the highly parallel SPLASH2 benchmark is demonstrated. However, investigating
 these claims reveals some shortcomings with this approach.  Of primary concern
-is the large area overhead required to achieve the same benchmark performance.
-In order to achieve the same performance as a single core baseline system on the
-\emph{Cholesky} benchmark, 6 cores and 3 times the baseline amount of cache were
-required.  In the worst case, some benchmarks require as many as 16 cores and 32
-times as much L1 cache (\SI{2}{\mega\byte} vs \SI{64}{\kilo\byte}) to achieve
+is the large area overhead required to achieve the same benchmark performance as a single core baseline system.
+To achieve this same performance on the \emph{Cholesky} benchmark, 6 cores and 3x the baseline amount of cache were
+required.  In the worst case, some benchmarks require as many as 16 cores and 32x as much L1 cache (\SI{2}{\mega\byte} vs \SI{64}{\kilo\byte}) to achieve
 the same performance as the baseline.  It is important to remember that these
 results are being presented in comparison to a single core reference on a highly
 parallel workload. By Amdahl's law, the speedup from parallelism will have
-diminishing returns as more cores are added~\cite{Amdahl:1967eu}.  The corollary is that the biggest
-benefit from parallelism will be realized by going from a single core to several
-cores. Emphasizing this point, their results show only a an approximate 15\%
-energy efficiency improvement when moving from a traditional $V_{dd}$ scaled CMP
-to a clustered architecture without $V_{th}$ tuning.
+diminishing returns as more cores are added~\cite{Amdahl:1967eu}.
+The corollary is that the biggest benefit from parallelism will be realized by going from a single core to several cores.
+Additionally, the clustering architecture results show only an approximate 15\% energy efficiency improvement when moving from a traditional $V_{dd}$ scaled CMP to a clustered architecture without $V_{th}$ tuning.
 
-The clustering technique also uses separate $V_{th}$ tuning for the core and
-cache to find the energy optimal voltage for the same performance. However, in
-examining these voltages actually are, it is revealed that neither $V_{dd}$
+The clustering technique also uses separate $V_{th}$ tuning for the core and cache to find the energy optimal voltage for the same performance.
+However, in examining the voltage values, it is revealed that neither $V_{dd}$
 of the cache nor the logic is actually in the near-threshold regime as defined
 by the paper, and both are in fact operating at a $V_{dd}$ 2x--3x higher than
 the selected $V_{th}$. In modern process technologies, the standard $V_{dd}$ is
 already approaching 2x $V_{th}$. As described in Section~\ref{sec:bodybiasing},
-the techniques for tuning $V_{th}$ are also becoming less effective.
+techniques for tuning $V_{th}$, such as body biasing, are also becoming less effective.
 
 One final concern is that while energy optimal cluster configurations are
 presented for each SPLASH2 benchmark, no co-optimized configuration is given.

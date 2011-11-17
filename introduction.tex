@@ -4,16 +4,16 @@
 Power consumption and heat removal have become two of the top concerns in the datacenter space\cite{EPA_2007}. 
 According to the International Technology Roadmap for Semiconductors, power consumption for each generation of chips is growing, making it one of the most significant roadblocks to future scaling \cite{Devised_2009}. 
 
-One recently proposed  solution to this increased power is to operate the microprocessor at a significantly lowered voltage, approaching the threshold voltage of its transistors\cite{Dreslinski:2010ez}. 
+One recently proposed  solution to this increased power is to operate the microprocessor at a significantly lowered voltage, approaching the transistor threshold voltage~\cite{Dreslinski:2010ez}. 
 This near-threshold computing~(NTC) will yield approximately a 10x energy savings at the cost of 10x performance loss and a 20x total performance uncertainty. 
 The NTC proposal claimed that many of these downsides can be mitigated by techniques such as device optimizations, variation tolerant circuit design, and body biasing as well as architectural changes such as increased parallelism and a move to a clustering-based architecture.
 
-Although at first glance these improvements may seem to be able to regain much of the performance loss associated with near-threshold computing, the techniques do not hold up to closer scrutiny. 
-In section~\ref{fig:voltage_delay}, we will introduce an expression for the dependency of delay on operating voltage in near-threshold.
-Section~\ref{sec:deviceoptimization} will expand upon this to show that the potential device optimizations cited by Dreslinski's NTC paper as methods to increase transistor speed will be ineffective in the near-threshold regime.
-Moving on to concerns over variability, section~\ref{sec:criticalpaths} derives a conservative model for how the number of potential critical paths increases due to the additional delay variation inherent in near-threshold computing and section~ref{sec:softedge} raises concerns about the ability of soft-edge flip flops to overcome delay variations in near-threshold designs.
-**ADD MARIO'S PART**
-Concerns about the methodology of Dreslinski's proposed clustering architecture are addressed in section~\ref{sec:clustering}, which is generalized in section~\ref{sec:darksilicon} to show that any parallel architecture will have problems regaining performance lost to NTC.
-
 We have shown that many of the ideas presented in Dreslinski's NTC paper \cite{Dreslinski:2010ez} are ineffective at recovering the performance lost due to near-threshold computing, especially in the context of a datacenter environment. 
 Although datacenters have a strong motivation to reduce their power consumption, the performance sacrifices inherent to NTC makes it an impractical choice for future servers.
+
+In Section~\ref{sec:deltavth}, we will introduce an expression for the dependency of delay on operating voltage in near-threshold.
+Section~\ref{sec:deviceoptimization} will expand upon this to show that the potential device optimizations cited by Dreslinski's NTC paper as methods to increase transistor speed will be ineffective in the near-threshold regime.
+Moving on to concerns over variability, Section~\ref{sec:criticalpaths} derives a conservative model for how the number of potential critical paths increases due to the additional delay variation inherent in near-threshold computing and Section~\ref{sec:softedge} raises concerns about the ability of soft-edge flip flops to overcome delay variations in near-threshold designs.
+**ADD MARIO'S PART**
+Concerns about the methodology of Dreslinski's proposed clustering architecture are addressed in Section~\ref{sec:clustering}, which is generalized in Section~\ref{sec:darksilicon} to show that any parallel architecture will have problems regaining performance lost to NTC.
+
