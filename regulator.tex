@@ -5,7 +5,7 @@ that is near the device threshold voltage~\cite{Dreslinski:2010ez}. When we atte
 energy efficiency of these gates to the energy efficiency of a whole system, we
 need to carefully evaluate the associated overhead.
 Both~\cite{ISLPED:2011}
-and~\cite{Pitfall:2010} raised the concern that the efficiency
+and~\cite{Pitfall:2010} raises the concern that the efficiency
 of the voltage regulator would be lower for delivering power to a near-threshold
 computing design. \cite{ISLPED:2011} presents evidence that
 typical voltage regulator efficiency is lower at light load and argues that if a
@@ -15,7 +15,7 @@ voltage is generated with an on-chip switch-capacitor converter. They shows that
 the efficiency of the regulator is at 90\% for an output voltage of 1.2V and is
 at 70\% for an output voltage of 0.5V.
 
-In the context of server computing, the power is delivered to the
+In the space of server computing, different from~\cite{Pitfall:2010}, the near threshold server processor is going to has power consumption on the same order of magnitude as the above threshold processor. The power is delivered to the
 microprocessors typically through a buck converter which down converts the 12V
 mother board voltage~\cite{Server:2006}. Although it is
 difficult to derive a quantitative comparison between the efficiency of a 1.2V
@@ -24,11 +24,11 @@ design, it is possible to consider the difference in requirement for these two
 regulators and understand where the difference in efficiency may come in. 
 
 The performance of digital circuits is highly susceptible to power supply noise.
-This susceptibility is worse when the design is operating in the near threshold
-region, as shown earlier in figure ~\ref{fig:voltage_delay}). On the other hand,
-the worst case power supply noise is related to the transient response of the regulator to a load change. When the processor has a sudden change in load current,  the difference in current the inductor and load is going to cause to output voltage to rise or drop, hence creating voltage noise. \cite{Transient} shows for a high-step down ratio buck converter, the worst case is during a load step-down where the voltage across the inductor is -$V_{out}$. Since $V_{out}$ is small, the inductor current is discharged at a slow rate and it takes a long time for it to match the load current. If  $V_{out}$ is further reduced, the transient performance is going to degrade more. Thus, when the output voltage of the regulator is at the level of near-threshold, the processor has high performance variability due both high sensitivty to power supply noise and  larger supply noise. 
+This susceptibility gets worse when the design is operating in the near threshold
+region, as shown earlier in figure~\ref{fig:voltage_delay}. On the other hand,
+the worst case power supply noise is related to the transient response of the regulator to a load change. When the processor has a sudden change in load current,  the difference in current the inductor and load is going to cause to output voltage to rise or drop, hence creating voltage noise. \cite{Transient} shows for a high-step down ratio buck converter, the worst case is during a load step-down where the voltage across the inductor is -$V_{out}$. Since $V_{out}$ is small, the inductor current is discharged at a slow rate and it takes a long time for it to match the load current. If  $V_{out}$ is further reduced, the transient performance is going to degrade more. Thus, when the output voltage of the regulator is at the level of near-threshold, the processor has large performance variability due both high sensitivty to power supply noise and  larger supply noise. 
 Alternatively, it is possible to  improve the transient performance of the regulator, but it comes at the price of efficiency, board area
-or chip area when transient response is improved by reducing the output inductance or adding more decoupling capacitors.
+or chip area when transient response is improved by reducing the output inductance or adding more decoupling capacitors.	
 
 In addition,  one of the goals of employing near threshold computing for servers
 is to reduce power consumption while maintaining throughput. However, unless
@@ -40,5 +40,5 @@ efficiency loss in the output rectification is the ratio between the output
 voltage and the voltage drop across the output transistor. Since the output
 voltage is small, the regulator is more sensitive to voltage drop across the
 output transistor. On top of that, the higher output current further increases
-the voltage drop across the output stage.  
+the voltage drop across the output stage. Therefore, these source of inefficiency reduce the power saving benifits of operating server processors at the near threshold region.  
 
