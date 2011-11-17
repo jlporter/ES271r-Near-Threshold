@@ -20,11 +20,7 @@ V_{T} = V_{TO} + \gamma ( \sqrt{ | {V_{SB} + 2\phi_{F} | } } - \sqrt{ | 2\phi_{F
 \gamma = (1/C_{ox})\sqrt{2q\epsilon_{si}N_A}
 \end{equation}
 
-On the other hand, systematic variation such as gate length is increasing with
-every successive technology. [] shows that sigma of the critical dimension
-variation caused by line edge roughness has been around 5nm and remained roughly
-constant across different technology node. As a result, the variability in delay
-continues to rise with technology scaling. 
+With various resolution enhancement technique, the systematic variation in gate length has been kept to a steady percentage of the gate length variation in recent technology node~cit{Intel:2009}. Intel shows that sigma of the system variation gate length variation is managed to apprximately 3% across different technology node~cite{Intel:2009}. However, due to the inherent resolution limitation in current lithogothy process, percentage of gate length variation in future technology generation may start to increase again~cite{OPC20}.    
 
 
 Under these two trends, the need for body biasing compensation is potentially increasing
@@ -72,7 +68,7 @@ analysis, the only variation considered is within-die systematic variation. To l
   \end{tabular}
 \end{table}
 
-Table~\ref{compensation} shows the result when variation is included in the model. The effectiveness of process compensation by body biasing is measured in terms of magnitude of gate length variation body biasing can restore. As suggestied by the model, although the compensation is very effective in 35nm for near threshold computing, being able to compensate for 53\% of gate length variation, this number will quickly be quickly be reduced to 11.8\% in two technolgoy node. At the same time, as argued earlier the gate length variation is increasing. In future technology generation, the body biasing technique would not be sufficient to offset the delay variation for near threshold computing.    
+Table~\ref{compensation} shows the result when variation is included in the model. The effectiveness of process compensation by body biasing is measured in terms of magnitude of gate length variation body biasing can restore. As suggestied by the model, although the compensation is very effective in 35nm for near threshold computing, being able to compensate for 21.25\% of gate length variation, this number will quickly be quickly be reduced to 5.6\% in two technolgoy node. As the sigma of systematic variation in gate length is approximately 3%, body biasing can only correct for 2 $\sigma$ in two generations. Thus, in future technology generation, the body biasing technique would not be sufficient to offset the delay variation for near threshold computing.    
 
 \begin{table}
   \caption {Variation compensation by body-biasing}  
@@ -88,3 +84,4 @@ Table~\ref{compensation} shows the result when variation is included in the mode
     \hline
   \end{tabular}
 \end{table}
+
