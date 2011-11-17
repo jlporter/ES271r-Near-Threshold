@@ -1,5 +1,6 @@
-paper.pdf
 *.aux
 *.bbl
 *.blg
+*.gz
 *.log
+*.pdf
