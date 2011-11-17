@@ -28,31 +28,32 @@ increased.~\cite{Esmaeilzadeh2011Dark-silicon-an}} \label{fig:power_speedups}
 \end{figure}
 
 While dark silicon is an opportunity for devices to reach higher levels of
-integration, recent studies analyzing dark silicon have not born out the promise
-of higher levels of performance with increasing core counts.  Work by
+integration, recent studies analyzing dark silicon have not born out the
+promise of higher levels of performance with increasing core counts.  Work by
 Esmaeilzadeh et. al~\cite{Esmaeilzadeh2011Dark-silicon-an} developed an
 analytical model analyzing the impact of dark silicon for a range of CMP
 configurations in future process technologies. They show projected speedups for
-these configurations using the PARSEC benchmark suite,
-which represents workloads similar to the SPLASH2 benchmark suite used in the
-previously discussed clustering architecture
-papers~\cite{dreslinski2010near,Zhai:2007kn}, indicating that both works are targeting
-similar applications. This analytical model does project that dark silicon will
-become a significant portion of CPU area in the near future, dominating as soon as
-2016 with a conservative scaling model. However, the authors also analyze
-the case where the power constraint is lifted, which allows more cores to
-be powered and reduces the amount of dark silicon. Figure~\ref{fig:power_speedups} shows the projected speedups on different PARSEC
-benchmarks as the chip power is increased. The paper projects that if the amount of parallelism in applications
-were increased to 99\%, then the best case speedup for power limited cores in
-\SI{8}{\nano\meter} is 15x relative to a quad-core Nehalem processor at
-\SI{45}{\nano\meter}. However, as shown in Figure~\ref{fig:power_speedups}, with
-an unconstrained power budget, and the same current amount of application level
-parallelism, 8 out of 12 PARSEC benchmarks achieve no more than 10x speedup.
-What this indicates is that the amount of parallelism in general-purpose
-parallel workloads is currently not exploitable even by future power constrained
-multi-core chips. While near-threshold computing would allow more chips to be
-powered, it would not realize a significant speedup on most general-purpose
-parallel workloads due to the lack of exploitable parallelism.
+these configurations using the PARSEC benchmark suite, which represents
+workloads similar to the SPLASH2 benchmark suite used in the previously
+discussed clustering architecture papers~\cite{dreslinski2010near,Zhai:2007kn},
+indicating that both works are targeting similar applications. This analytical
+model does project that dark silicon will become a significant portion of CPU
+area in the near future, dominating as soon as 2016 with a conservative scaling
+model. However, the authors also analyze the case where the power constraint is
+lifted, which allows more cores to be powered and reduces the amount of dark
+silicon. Figure~\ref{fig:power_speedups} shows the projected speedups on
+different PARSEC benchmarks as the chip power is increased. The paper projects
+that if the amount of parallelism in applications were increased to 99\%, then
+the best case speedup for power limited cores in \SI{8}{\nano\meter} is 15x
+relative to a quad-core Nehalem processor at \SI{45}{\nano\meter}. However, as
+shown in Figure~\ref{fig:power_speedups}, with an unconstrained power budget,
+and the same current amount of application level parallelism, 8 out of 12
+PARSEC benchmarks achieve no more than 10x speedup.  What this indicates is
+that the amount of parallelism in general-purpose parallel workloads is
+currently not exploitable even by future power constrained multi-core chips.
+While near-threshold computing would allow more chips to be powered, it would
+not realize a significant speedup on most general-purpose parallel workloads
+due to the lack of exploitable parallelism.
 
 \begin{figure}[thpb] \centering
 \includegraphics[width=0.4\textwidth]{hardavellas_core_counts.png}
