@@ -8,7 +8,8 @@ By the equation,
 \begin{equation}
 \gamma = (1/C_{ox})\sqrt{2q\epsilon_{si}N_A}
 \end{equation}
-the combined effect of scaling these two parameters reduces the body effect parameter $\gamma$. When $\gamma$ decreases, the influence of body biasing voltage $V_{SB}$ on device threshold hold voltage $V_{th}$ is subsequently reduced, as show by
+the combined effect of scaling these two parameters reduces the body effect parameter $\gamma$.
+When $\gamma$ decreases, the influence of body biasing voltage $V_{SB}$ on device threshold voltage $V_{th}$ is subsequently reduced, as shown by
 \begin{equation}
 V_{T} = V_{TO} + \gamma ( \sqrt{ | {V_{SB} + 2\phi_{F} | } } - \sqrt{ | 2\phi_{F} | } )
 \end{equation}
@@ -20,7 +21,8 @@ However, due to the inherent resolution limitation in current lithography proces
 When body biasing is applied to a near-threshold design, the delay tuning range is much larger for the same amount of threshold modulation.
 Yet at the same time, since a near-threshold design is more sensitive to process variation, it is not obvious whether body biasing is more effective for a near-threshold design.
 To make a quantitative comparison between the effectiveness of body biasing for both a super-threshold design and a near-threshold design across different technology nodes, we simulate the propagation delay of a 6 FO4 inverter delay chain in \SI{32}{\nano\meter}, \SI{22}{\nano\meter} and \SI{16}{\nano\meter} using the ASU Predictive Technology Model~\cite{PredictiveModel}.
-The hspice model also includes variations in gate length, threshold voltage, supply voltage and temperatuere. To prevent latchup of transistor,  the maximum forward body biasing is set to \SI{0.4}{\volt}~\cite{BodyBiasing}.
+The HSPICE model also incorporates variations in gate length, threshold voltage, supply voltage, and temperature.
+To prevent transistor latchup, the maximum forward body biasing is set to \SI{0.4}{\volt}~\cite{BodyBiasing}.
 Table~\ref{tbl:body1} and Table~\ref{tbl:body2} show the delay of the inverter chain for zero body biasing and maximum forward body biasing when no variation is presented.
 The results show that body biasing indeed influence the delay of the inverter chain by a large percentage in the near-threshold region, but across technology node, the performance improvement with maximum body biasing is decreasing.
 
@@ -54,7 +56,7 @@ The results show that body biasing indeed influence the delay of the inverter ch
   \end{tabular}
 \end{table}
 
-On the other hand, the higher performance vairation can also be observed by comparing the result in Table~\ref{tbl:body1} and Table~\ref{tbl:body2}. 
+On the other hand, the higher performance variation can also be observed by comparing the results in Table~\ref{tbl:body1} and Table~\ref{tbl:body2}. 
 
 \begin{table}
   \caption{Performance variation in super-threshold computing} 
@@ -84,7 +86,13 @@ On the other hand, the higher performance vairation can also be observed by comp
   \end{tabular}
 \end{table}
 
-To evalute whether body biasing is more effective and suffcienctly effective for compensating the performance variation of a near threshold design, the three standard deviation delay of the inverter with body biasing applied is calculated through simulation. Then it is used along with inverter chain nominal delay to compte the effective standard deviation after applying body biasing, denoted by $\sigma_{BB}$. The result in Table~\ref{tbl:compensation} shows that body biasing is more effective in variation compensation in the near threshold region. However, even after the application of body biasing, the variation of a near threshold design is still NX larger than a super threshold  design in 32nm. In future technology node, as the effectiveness of body biasing decreases, the factor of reduction in variation can be achieved by using body biasing is also diminishing. Therefore, body biasing alone is not sufficient to close the variation gap bewteen super threshold design and near threshold design.    
+To evaluate whether body biasing is sufficiently effective for compensating for the performance variation of a near-threshold design, the three standard deviation delay of the inverter with body biasing applied is calculated through simulation.
+This delay is then used along with inverter chain nominal delay to compute the effective standard deviation after applying body biasing, denoted by $\sigma_{BB}$.
+The result in Table~\ref{tbl:compensation} shows that body biasing is more effective in variation compensation in the near-threshold region.
+However, even after the application of body biasing, the variation of a near-threshold design is still NX larger than a super-threshold  design in \SI{32}{\nano\meter}.
+In future technology nodes, as the effectiveness of body biasing decreases, the factor of reduction in variation that can be achieved by using body biasing is also diminishing.
+Therefore, body biasing alone is not sufficient to close the variation gap between super-threshold design and near-threshold design.
+   
 
 \begin{table}
   \caption {TBD}  

@@ -1,11 +1,13 @@
 \section{Voltage Regulators}
+\label{sec:regulators}
 
 Attempts to translate the energy efficiency of near-threshold transistors to the energy efficiency of the whole system need to carefully consider the associated overheads of the power delivery system.
 There is a concern that the efficiency of a voltage regulator delivering power to a near-threshold computing design will be lower because of its order-of-magnitude lower power consumption~\cite{ISLPED:2011}.
 
 However, in the space of server computing, a near-threshold server processor will have power consumption on the same order-of-magnitude as a super-threshold processor, but at a lower $V_{dd}$.
 In the case where the chip supply voltage is generated with an on-chip switched-capacitor converter, the efficiency of the regulator is 90\% for a super-threshold $V_{dd}$ of \SI{1.2}{\volt} but only 70\% for a near-threshold $V_{dd}$ of \SI{0.5}{\volt}~\cite{Pitfall:2010}.
-The standard configuration, on the other hand, is for power to be delivered to the microprocessor through an off-chip buck converter which converts the \SI{12}{\volt} motherboard voltage to the processor $V_{dd}$~\cite{Server:2006}. An example of the buck converter is shown in figure~\ref{fig:buck}.
+The standard configuration, on the other hand, is for power to be delivered to the microprocessor through an off-chip buck converter which converts the \SI{12}{\volt} motherboard voltage to the processor $V_{dd}$~\cite{Server:2006}.
+An example of a buck converter is shown in Figure~\ref{fig:buck}.
 
 \begin{figure}[thpb]
 \centering
@@ -18,8 +20,8 @@ In comparison to super threshold computing, the performance of digital circuits 
 The worst case power supply noise is related to the transient response of the regulator to a load change.
 When the processor causes a sudden change in load current, the difference in current between the inductor and the load will cause the output voltage to vary, creating voltage noise.
 For a high step-down ratio buck converter, the worst case voltage noise occurs during a load step-down~\cite{Transient}.
-At this point the switched node of the inductor, as shown in figure~\ref{fig:buck}, gets connected to ground, making the voltage across the inductor $-V_{out}$.
-Because $\frac{di}{dt}=\frac{V}{L}$ and $V_{out}$ is small, the inductor current is discharged at a slow rate and it takes a long time for it to match the load current~\cite{g2010principles}.
+At this point the switched node of the inductor, as shown in Figure~\ref{fig:buck}, gets connected to ground, making the voltage across the inductor $-V_{out}$.
+Because $di/dt=V/L$ and $V_{out}$ is small, the inductor current is discharged at a slow rate and it takes a long time for it to match the load current~\cite{g2010principles}.
 This slow equalization of current between the load and inductor causes the worst case voltage fluctuation.
 If $V_{out}$ is further reduced, the voltage noise will increase.
 Therefore, when the output voltage of the regulator is at the level of near-threshold, the processor has large performance variability due to both high sensitivity to power supply noise and larger supply noise.
@@ -27,7 +29,9 @@ Attempts to improve the transient performance of the regulator come at the cost 
 
 
 Because a near-threshold server processor will have similar power consumption to a super-threshold processor, but at a lower supply voltage, the current drawn by a near-threshold server processor will be higher.
-This higher output current is particularly problematic for the power lost due to the output impedance of the regulator. As the power delivered to output is $V_{out}I_{out}$ while the power loss due to the output impedance is $V_{drop}I_{out}$,   
-the efficiency loss due to the output impedance is the ratio between the voltage drop across the output transistor and the output voltage. For the same voltage drop, the efficiency loss is higher for a lower output voltage. On top of that, the higher output current further increases the voltage drop across the output transistor.
+This higher output current is particularly problematic for the power lost due to the output impedance of the regulator.
+As the power delivered to output is $V_{out}I_{out}$ while the power loss due to the output impedance is $V_{drop}I_{out}$, the efficiency loss due to the output impedance is the ratio between the voltage drop across the output transistor and the output voltage.
+For the same voltage drop, the efficiency loss is higher for a lower output voltage.
+On top of that, the higher output current further increases the voltage drop across the output transistor.
 
-Therefore, net outcome of worse voltage noise and regulator efficiency reduce the power saving benefits from operating server processors at the near-threshold region. 
+Therefore, the net outcome of worsening voltage noise and decreased regulator efficiency is to reduce the power savings from operating server processors in the near-threshold region.
