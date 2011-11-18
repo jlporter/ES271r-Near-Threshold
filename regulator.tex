@@ -16,7 +16,8 @@ An example of a buck converter is shown in Figure~\ref{fig:buck}.
 \caption{Synchronous Buck Converter}
 \end{figure}
 
-In comparison to super threshold computing, the performance of digital circuits has higher vulnerability to power supply noise when the server processor is operating in the near-threshold region, as shown earlier in Figure~\ref{fig:voltage_delay}. In addition, power delivery system also has an impact on the supply noise.
+In comparison to super threshold computing, the performance of digital circuits has higher vulnerability to power supply noise when the server processor is operating in the near-threshold region, as shown earlier in Figure~\ref{fig:voltage_delay}. In addition to the power supply, the power delivery system also has an impact on the supply noise.
+
 The worst case power supply noise is related to the transient response of the regulator to a load change.
 When the processor causes a sudden change in load current, the difference in current between the inductor and the load will cause the output voltage to vary, creating voltage noise.
 For a high step-down ratio buck converter, the worst case voltage noise occurs during a load step-down~\cite{Transient}.
@@ -29,9 +30,8 @@ Attempts to improve the transient performance of the regulator come at the cost 
 
 
 Because a near-threshold server processor will have similar power consumption to a super-threshold processor, but at a lower supply voltage, the current drawn by a near-threshold server processor will be higher.
-This higher output current is particularly problematic for the power lost due to the output impedance of the regulator.
-As the power delivered to output is $V_{out}I_{out}$ while the power loss due to the output impedance is $V_{drop}I_{out}$, the efficiency loss due to the output impedance is the ratio between the voltage drop across the output transistor and the output voltage.
-For the same voltage drop, the efficiency loss is higher for a lower output voltage.
-On top of that, the higher output current further increases the voltage drop across the output transistor.
+This higher output current is particularly problematic because of the power lost due to the output impedance of the regulator.
+As the power delivered to the processor is $V_{out}I_{out}$ and the power loss due to the output impedance is $V_{drop}I_{out}$, the efficiency loss due to the output impedance (the ratio between the voltage drop across the output transistor and the output voltage) is higher for a lower output voltage at the same regulator voltage drop.
+The higher output current further increases the voltage drop across the output transistor, worsening efficiency.
 
 Therefore, the net outcome of worsening voltage noise and decreased regulator efficiency is to reduce the power savings from operating server processors in the near-threshold region.
