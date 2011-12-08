@@ -43,4 +43,9 @@ When Equation~\ref{eqn:nth_current} is combined with Equation~\ref{eqn:delay}, t
 t_p\propto\frac{V_D}{\left[\ln\left(1+e^\frac{V_G-V_{TH}-V_\gamma}{2}\right)\right]^2}
 \end{equation}
  
- showing that small variations in $V_G$ or $V_\gamma$ can cause large differences in transistor delay.
+ showing that variations in $V_G$ or $V_\gamma$ that are considered insignificant in super-threshold operation can cause large differences in transistor delay.
+For example, a 50mV difference in threshold voltage could result in a $7.5\%$ reduction in FMAX and a 50mV difference in $V_G$ can result in a $11\%$ reduction in FMAX. 
+
+In near-threshold operation even very small differences in voltages and device characteristics, those of a magnitude that can easily be overlooked in super-threshold operation, have a dramatic effect on transistor operating frequency. 
+This means that not only does near-threshold operation translate to a slower device, but it also translates to a much more variable device.
+Looking at near-threshold as having 10x lower performance is not enough; one must also consider the additional safety factor needed to account for this variation.
