@@ -18,6 +18,6 @@ The number of critical paths then becomes the area under this delay-count curve 
     \label{fig:normal}
 \end{figure}
  
-Assuming the microcontroller was designed for $0.1\%$ of its paths to be critical, increasing $\frac{\sigma_v}{\mu}$ by 7x as the voltage drops into the near-threshold regime will cause this amount  to leap to $60\%$, an increase in the number of critical paths of 600x.
+Assuming the microcontroller was designed for $0.1\%$ of its paths to be critical, increasing $\frac{\sigma_v}{\mu}$ by 7x (as Dreslinski~\cite{Dreslinski:2010ez} suggests will happen in near-threshold) as the voltage drops into the near-threshold regime will cause this amount  to leap to $60\%$, an increase in the number of critical paths of 600x.
 
 This vast increase in critical paths will translate into a reduction in the maximum frequency of the design. At the worst case, the overall chip slowdown scales as $1/\sqrt{n_{cp}}$ \cite{Bowman:2002cp}, which would in this case lead to a 24x slowdown.
