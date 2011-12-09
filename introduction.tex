@@ -11,9 +11,9 @@ The NTC proposal claimed that many of these downsides can be mitigated by techni
 We have shown that many of the ideas presented in Dreslinski's NTC paper \cite{Dreslinski:2010ez} are ineffective at recovering the performance lost due to near-threshold computing, especially in the context of a datacenter environment. 
 Although datacenters have a strong motivation to reduce their power consumption, the performance sacrifices inherent to NTC makes it an impractical choice for future servers.
 
-In Section~\ref{sec:deltavth}, we will introduce an expression for the dependency of delay on operating voltage in near-threshold.
-Section~\ref{sec:deviceoptimization} will expand upon this to show that the potential device optimizations cited by Dreslinski's NTC paper as methods to increase transistor speed will be ineffective in the near-threshold regime.
-Moving on to concerns over variability, Section~\ref{sec:criticalpaths} derives a conservative model for how the number of potential critical paths increases due to the additional delay variation inherent in near-threshold computing and Section~\ref{sec:softedge} raises concerns about the ability of soft-edge flip flops to overcome delay variations in near-threshold designs.
+In Section~\ref{sec:deltavth}, we will introduce an expression for the dependency of delay on operating voltage in near-threshold, showing that small variations in supply or threshold voltages can lead to large differences in performance.
+%Section~\ref{sec:deviceoptimization} will expand upon this to show that the potential device optimizations cited by Dreslinski's NTC paper as methods to increase transistor speed will be ineffective in the near-threshold regime.
+Expanding on these concerns over variability, Section~\ref{sec:criticalpaths} derives a conservative model for how the number of potential critical paths increases due to the additional delay variation inherent in near-threshold computing and Section~\ref{sec:softedge} raises concerns about the ability of soft-edge flip flops to overcome delay variations in near-threshold designs.
 Section~\ref{sec:regulators} discusses power delivery concerns, both in terms of supply noise and regulator inefficiency. 
 Concerns about the methodology of Dreslinski's proposed clustering architecture are addressed in Section~\ref{sec:clustering}, which is generalized in Section~\ref{sec:darksilicon} to show that any parallel architecture will have problems regaining performance lost to NTC.
 
